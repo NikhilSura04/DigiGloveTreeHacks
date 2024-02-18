@@ -19,7 +19,7 @@ data = []
 # Define the function to calculate the angle between three points
 def calculate_angle(point1, point2, point3):
     """
-    Calculate the angle between three points
+    Calculate the angle between three random points
     """
     point1 = np.array(point1)
     point2 = np.array(point2)  # This is the joint point
@@ -43,7 +43,7 @@ parser.add_argument("--data_dir", help="Directory to save data to", type=str, de
 parser.add_argument("--port", help="Port for Arduino connection", type=str, default=None)
 args = parser.parse_args()
 
-# Establish serial connection if a port is specified
+# for future arduini use
 arduino_serial = None
 if args.port:
     arduino_serial = serial.Serial(args.port, 230400)
@@ -53,7 +53,7 @@ if args.knn:
     knn_file = open(args.knn, 'rb')     
     knn = pickle.load(knn_file)
 
-# Mediapipe and Pygame initializations
+
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_hands = mp.solutions.hands
